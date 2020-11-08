@@ -1,0 +1,41 @@
+{% extends "creaciondeusuarios.html" %}
+{% load static %}
+{% block formulario %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    <h2> PLACA GAMA ALTA </h2>
+    </div><br>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Placa Madre X570 Marca GigaByte RGB Sync,  WIFI Integrado, Soporte AMD.</h3></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Stock: 900 Unidades</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Precio oferta: $120.000</h3></div>
+    </div>
+    <div class="row justify-content-center">
+    <img src={% static 'images/placa.png'%} width="800px" heigth="800px" alt="imagen no disponible por el momento">
+    </div><br>
+    <div class="row justify-content-center">
+        <input type="submit" class="btnventa!! btn btn-success" value="comprar">
+    </div>
+</div>
+<section class="social">
+<p>Follow quesito!</p>
+<div class="links">
+<a href="https://www.facebook.com/Quesito-285926705502747" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://twitter.com/juanfractal22/status/1308588043331350528/photo/1" target="_blank">
+    <i class="fab fa-twitter"></i>
+</a>
+<a href="https://www.instagram.com/quesitos.veganos/" target="_blank">
+    <i class="fab fa-instagram"></i>
+</a>
+</div>
+</section>
+{% endblock %}

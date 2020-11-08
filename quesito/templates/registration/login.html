@@ -1,0 +1,16 @@
+{% extends "creaciondeusuarios.html" %}
+{% load crispy_forms_tags %}
+{% block formulario %}
+    <form method="POST">
+        {% csrf_token %}
+            {{ form|crispy }}
+        <div class="row justify-content-center">
+            <a class="btnlimpiar btn btn-light" href="{% url 'login' %}" role="button">limpiar</a>
+            <p>       </p>
+            <input type="submit" class="btnenviar btn btn-success" value="enviar">
+            <p>       </p>
+            <a class="btninicio btn btn-primary" href="http://127.0.0.1:8000/" role="button">volver</a>
+        </div>
+        
+    </form>
+{% endblock %}

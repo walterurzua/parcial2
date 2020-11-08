@@ -1,0 +1,104 @@
+{% extends "creaciondeusuarios.html" %}
+{% load static %}
+{% block formulario %}
+<div class="justify-content-center">
+    {% if user.is_authenticated and user.is_staff %}
+    <form acction="{% url 'productos' %}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2">id:</div>
+        <div class="col-12 col-md-4">
+            <input type="text" name="id" class="form-control" placeholder="ingrese la descripción del producto." title="ingrese correo elctronico"> 
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2">Nombre producto:</div>
+        <div class="col-12 col-md-4">
+            <input type="text"  name="nombrep" value="{{item.nombrep}}" class="form-control" placeholder="ingrese el nombre del producto" title="ingrese su nombre completo"> 
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2">descripción:</div>
+        <div class="col-12 col-md-4">
+            <input type="text" name="descripcionp" value="{{item.descripcion}}" class="form-control" placeholder="ingrese la descripción del producto." title="ingrese correo elctronico"> 
+        </div>
+    </div><br>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2" >stock:</div>
+        <div class="col-12 col-md-4">
+            <input type="text" name="stockp" value="{{item.stock}}" class="form-control" placeholder="ingrese el stock del producto" title="ingrese el rut" maxlength="10"> 
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2" >precio costo:</div>
+        <div class="col-12 col-md-4">
+            <input type="text" name="preciocosto" value="{{item.precioCosto}}" class="form-control" placeholder="ingrese el precio de costo para el empleador" title="ingrese su telefono de contacto"> 
+        </div>
+    </div><br>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2" >precio venta:</div>
+        <div class="col-12 col-md-4">
+            <input type="text" name="precioventa" value="{{item.precioVenta}}" class="form-control" placeholder="ingrese el precio de venta para el usuario" title="ingrese su telefono de contacto" maxlength="9"> 
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-2" >imagen:</div>
+        <div class="col-12 col-md-4">
+            <input type="file" name="imagen" class="form-control"> 
+        </div>
+    </div>
+    <p>       </p>
+    <div class="row justify-content-center">
+        <div class="coll-12 col-md-4">
+            {% if user.is_authenticated and user.is_superuser %}<input type="submit" name="agregar" class="btn btn-success" value="agregar">
+            <input type="submit" name="eliminar" class="btn btn-success" value="eliminar">{% endif %}
+            <input type="submit" name="buscar" class="btn btn-success" value="buscar">
+            <input type="submit" name="listar" class="btn btn-success" value="listar">
+        </div>
+    </div>
+    </form>
+    <div class="row justify-content-center">
+        <form action="{% url 'lista' %}" method="POST">
+            {% csrf_token %}
+        <div>
+            <div class="table-responsive">
+                <table class="table" style="color: aqua;">
+                    <thead class="table-active">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th>PrecioCosto</th>
+                        <th>PrecioVenta</th>
+                        <th>imagen</th>
+                    </thead>
+                    <tbody>
+{% for fila in lista %}
+                        <tr>
+                            <td>{{ fila.id }}</td>
+                            <td>{{ fila.nombrep }}</td>
+                            <td>{{ fila.descripcion }}</td>
+                            <td>{{ fila.stock }}</td>
+                            <td>{{ fila.precioCosto }}</td>
+                            <td>{{ fila.precioVenta }}</td>
+                            <td><img src="{{fila.img.url }}" style="width: 100px;"></td>
+                        </tr>
+{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% for fila in productos %}
+        <img class="col-md-3" src="{{fila.img.url}}">
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+</div>
+
+{% endblock %}

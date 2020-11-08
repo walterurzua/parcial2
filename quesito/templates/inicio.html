@@ -1,0 +1,81 @@
+{% extends "creaciondeusuarios.html" %}
+{% load static %}
+{% block formulario %}
+<div class="container-fluid">
+        <p>       </p>
+    <div class="row justify-content-center">
+    <div class="carro col-12 col-sm-12 col-md-12 col-lg-6 ">
+        <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+        <div class="carousel-inner">
+                <div class="carousel-item active">
+                <a href="http://127.0.0.1:8000/monitor" ><img src={% static 'images/monitor.png'%}  class="img-fluid d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>MONITOR GAMA ALTA</h5>
+                    <p> Monitor marca Asus 144hz 1ms de respuesta </p>
+                    <p> Precio oferta: $200.000</p>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <a href="http://127.0.0.1:8000/teclado" ><img src={% static 'images/teclado.png'%}  style="width:80%;height:auto" class="d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>TECLADO Y MOUSE GAMER</h5>
+                    <p>Teclado y mouse marca raze con interruptores mecanicos </p>
+                    <p>Precio oferta: $40.000</p>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <a href="http://127.0.0.1:8000/audifonos" ><img src={% static 'images/audifonos.png'%} style="width:80%;height:auto" class="d-block w-100" alt="..."></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Audifonos con microfono ideales para jugar y escuchar musica </p>
+                    <p>Funcionan en PS4 XBOX y PC</p>
+                    <p>Precio oferta: $38.000</p>
+                </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+                </div>
+            </div>
+            </div>
+
+
+    <div class="recuadros">
+        <div>
+            <img src={% static 'images/ubicacion1.png'%} class="recuadros img" >
+            <h2> ENCUENTRANOS!</h2>
+            <P> Estamos ubicadon serca de plaza maipu bla bla bla ... </P>
+            <a href="https://www.google.cl/maps/place/Duoc+UC:+Sede+Maipu/@-33.5106986,-70.7527569,17.32z/data=!4m5!3m4!1s0x0:0x4d17b82a7ba77488!8m2!3d-33.5114203!4d-70.7524413?hl=es&authuser=0" target="_blank">VER UBICACION <i class="fas fa-angle-double-right"></i></a>
+        </div>  
+        <div>
+            <img src={% static 'images/monitor.png'%} class="recuadros img">
+            <h2> producto mas vendido </h2>
+            <P> este es el producto mas vendido entre nuestros compradores. aprovecha el descuento!!</P>
+            <a href="http://127.0.0.1:8000/monitor">comprar <i class="fas fa-angle-double-right"></i></a>
+        </div>  
+        <div>
+            <img src={% static 'images/oferta.png'%} class="recuadros img">
+            <h2> fechas de ofertas!!</h2>
+            <P> Mira cuando acaban nuestras ofertas y cuando comiensan las proximas. no te lo pierdas! </P>
+            <a href="#">ver rebajas <i class="fas fa-angle-double-right"></i></a>
+        </div>   
+    </div>
+    <section class="bandera">
+        <div class="contenido">
+        <h2> conoce mas sobre nuestra empresa</h2>
+        <P> QUIENES SOMOS
+         E-COMERCE es una compañía de tecnologías de la información y la comunicación (tic) especializada en la prestación de servicios de consultoría, la realización de proyectos en el ámbito de las telecomunicaciones, el desarrollo de aplicaciones y sistemas de información <P>
+        </div>
+    </section>
+</div>
+{% endblock %}

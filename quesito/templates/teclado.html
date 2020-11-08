@@ -1,0 +1,27 @@
+{% extends "creaciondeusuarios.html" %}
+{% load static %}
+{% block formulario %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    <h2> TECLADO Y MOUSE GAMER</h2>
+    </div><br>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Teclado con interruptores mecanicos y mouse con 1000DPI marca raze </h3></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Stock: 500 Unidades</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Precio oferta: $40.000</h3></div>
+    </div>
+    <div class="row justify-content-center">
+    <img src={% static 'images/teclado.png'%} width="800px" heigth="800px" alt="imagen no disponible por el momento">
+    </div><br>
+    <div class="row justify-content-center">
+        <input type="submit" class="btnventa!! btn btn-success" value="comprar">
+    </div>
+</div>
+{% endblock %}

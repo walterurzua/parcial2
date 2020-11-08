@@ -1,0 +1,93 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <title> quesito ñam ñam </title>
+        <link rel="icon" type="image/png" href={% static 'images/icono.png'%}>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href={% static 'CSS/estilos.css'%}>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <script src={% static 'images/creaciondeusuarios.js'%}></script>
+
+    </head>
+    <body>
+    <div class="margen container-fluid">
+            <nav  class="navbar navbar-expand-xl navbar-dark bg-dark">
+                <a  class="navbar-brand" href="http://127.0.0.1:8000/">
+                <img src={% static 'images/icono2.png'%} width="250" height="80"  loading="lazy"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://127.0.0.1:8000/">inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            opciones
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/registro">Registro de usuarios</a>
+                                <a class="dropdown-item" href="{% url 'login' %}">login</a>
+                            </div>
+                          </li>
+                          {% if user.is_authenticated and user.is_staff %}
+                          <li class="nav-item active" txt-aligne= "rigth">
+                            <a class="nav-link" style="color: aqua;" href="http://127.0.0.1:8000/productos">registro de productos</a>
+                          </li>
+                          {% endif %}
+                    </ul>
+                    <div class="navbar-nav">
+                      {% if user.is_authenticated %}
+                        <li class="nav-item active" txt-aligne= "rigth">
+                        <a class="nav-link" href="#">Bienvenido:{{user.username}}</a>
+                        </li>
+                        <li class="nav-item active" txt-aligne= "rigth">
+                          <a class="nav-link" href="{% url 'logout' %}?next=">chao</a>
+                          </li>
+                      
+                      {% else %}
+                        <li class="nav-item active" txt-aligne= "rigth">
+                          <a class="nav-link" href="#">Bienvenido:invitado</a>
+                        </li>
+                      {% endif %}
+                  </div>
+                </div>
+                
+            </nav>
+
+        </div>
+            </nav>
+
+    </div>
+    <p>       </p>
+    
+
+    {% block formulario %}
+    {% endblock %}
+
+    <section class="social">
+      <p>Follow quesito!</p>
+      <div class="links">
+        <a href="https://www.facebook.com/Quesito-285926705502747" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/juanfractal22/status/1308588043331350528/photo/1" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/quesitos.veganos/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+
+    
+
+
+    </body>
+</html>

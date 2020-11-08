@@ -1,0 +1,29 @@
+{% extends "creaciondeusuarios.html" %}
+{% load static %}
+{% block formulario %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    <h2> FUENTE DE PODER GAMER </h2>
+    </div><br>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Fuente de poder COUGAR CMX, 700watts, 80 Plus Oro, Modular.</h3></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Stock: 40 Unidades</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-4" ><h3>Precio oferta: $120.000</h3></div>
+    </div>
+    <div class="row justify-content-center">
+    <img src={% static 'images/fuente.png'%} width="800px" heigth="800px" alt="imagen no disponible por el momento">
+    </div><br>
+    <div class="row justify-content-center">
+        <input type="submit" class="btnventa!! btn btn-success" value="comprar">
+    </div>
+</div>
+
+{% endblock %}
